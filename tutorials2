@@ -1,0 +1,79 @@
+﻿
+$ npx prisma migrate dev
+
+$ npx prisma migrate deploy
+
+$ npx prisma studio
+
+
+///////////
+
+ESTAREMOS UTILIZANDO UMA VERSAO ANTIGA DO PRISMA PARA O PROJETO: TUTORIAL DE INSTALACAO DA NOVA:
+https://efficient-sloth-d85.notion.site/Atualiza-o-Prisma-7-2-0-API-SOLID-2ee395da577080a9851ec3d0d50beb0c
+
+VERSAO ANTIGA: 
+npm install @prisma/client@4.10.1
+
+E
+
+npm install prisma@4.10.1 -D
+
+
+///////
+
+
+import fastify from 'fastify'
+import { PrismaClient } from '@prisma-generated/client.js'
+import { PrismaPg } from '@prisma/adapter-pg'
+
+export const app = fastify()
+
+const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! })
+const prisma = new PrismaClient({ adapter })
+
+prisma.user.create({
+data: {
+name: 'Diego Fernandes',
+email: 'diego@rocketseat.com.br',
+}
+})
+
+
+$ docker stop api-solid-pg
+
+$ docker start api-solid-pg
+
+$ docker logs api-solid-pg
+
+$ docker 
+
+$ sudo systemctl stop postgresql
+
+$ docker compose up -d
+
+$ docker compose down -d
+
+
+RELACIONAMENTOS:  
+
+1-1 = 1 dado da tabela com 1 dado de outra tabela.
+1-N = 1 informaca de uma tabela relacionada com varios registros de outra tabela
+N-N = Varios tipos de informacao interdependentes entre tabelas 
+
+Password hash: criptografa a senha 6 vezes. Para checar se a senha esta certa, criptografa novamente. 
+const password_hash = await hash(password, 6)
+
+
+TDD – Estados
+Red: teste falhando (antes de criar)
+Green: teste funcionando
+Refactor: refatoracao
+
+JWT: header.payload.sign
+
+Palavra-Chave: 3lvrhweqowfpdvnwerKamikazedwcdwivjnrw2026y
+
+
+Error Handler: elimina necessidade dos trycatchs no controller
+Timeline:
+Imports → Workspace → Use-cases + Errors → Factories → JWT → Controllers → Polida + Argon2 -> Error Handler (Padronizacao HTTP) → Swagger (Fastify)

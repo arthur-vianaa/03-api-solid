@@ -1,0 +1,48 @@
+{
+  "name": "03-api-solid-nodejs",
+  "version": "1.0.0",
+  "description": "GymPass style app.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.cjs",
+    "build": "tsup src --out-dir build",
+    "test": "vitest run --project unit",
+    "test:e2e": "vitest run --project e2e",
+    "test:watch": "vitest --project unit",
+    "test:e2e:watch": "vitest --project e2e",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/bcryptjs": "2.4.6",
+    "@types/node": "25.8.0",
+    "@types/supertest": "7.2.0",
+    "@vitest/coverage-v8": "4.1.7",
+    "@vitest/ui": "4.1.7",
+    "prisma": "7.8.0",
+    "supertest": "7.2.2",
+    "tsup": "8.5.1",
+    "tsx": "4.22.3",
+    "typescript": "5.9.3",
+    "vite-tsconfig-paths": "6.1.1",
+    "vitest": "4.1.7"
+  },
+  "dependencies": {
+    "@fastify/cookie": "11.0.2",
+    "@fastify/jwt": "9.1.0",
+    "@prisma/adapter-pg": "7.8.0",
+    "@prisma/client": "7.8.0",
+    "bcryptjs": "3.0.3",
+    "dayjs": "1.11.20",
+    "dotenv": "17.4.2",
+    "fastify": "5.8.5",
+    "fastify-plugin": "5.1.0",
+    "pg": "8.21.0",
+    "zod": "4.4.3"
+  }
+}
